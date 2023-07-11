@@ -18,8 +18,7 @@ namespace IdentityServer
         public static IEnumerable<ApiScope> ApiScopes =>
        new List<ApiScope>
        {
-            new ApiScope("employee-api-read", "Employee API"),
-            new ApiScope("employee-api-write", "Employee API")
+            new ApiScope("employee-api", "Employee API")
        };
 
         public static IEnumerable<Client> Clients =>
@@ -36,7 +35,7 @@ namespace IdentityServer
                 new Secret("secret".Sha256())
             },
 
-            AllowedScopes = { "employee-api-read", "employee-api-write"}
+            AllowedScopes = { "employee-api"}
         }
     };
     }
