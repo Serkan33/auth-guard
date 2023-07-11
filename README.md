@@ -1,54 +1,68 @@
-![RoofStacks Logo](roofstacks-logo.png)
+# Employee API
 
-# Roof Stacks Case Study Pool
+Welcome to the Employee API! This API allows you to perform CRUD (Create, Read, Update, Delete) operations on employees. It is built with .NET Core and utilizes IdentityServer4 for authentication. The API uses an in-memory database for storage. FluentValidation is used for input validation, and Mapster is used for object mapping.
 
-RoofStacks Inc. has a funny and fast technical recruitment process. And we would like to improve our steps to do this better. This repo has many case-study/assignments for many types of candidates.
+## Getting Started
 
-## Case Study List
-- [Backend Developer](backend-developer/)
-    - [Auth Guard](backend-developer/auth-guard/)
-    - [Mini Wallet Service](backend-developer/mini-wallet-service/)
-- [Blockchain Developer](blockchain-developer/)
-    - [NFT Minter DApp](blockchain-developer/nft-minter-dapp/)
-- [Data Analytics Developer](data-analytics-developer/)
-    - [Report Visualizer](data-analytics-developer/report-visualizer/)
-- [Frontend Developer](frontend-developer/)
-    - [Star Food](frontend-developer/star-food/)
-- [Game Developer](game-developer/)
-    - [Horse Race](game-developer/horse-race/)
-- [Infrastructure Developer](infrastructure-developer/)
-    - [Mini Cluster](infrastructure-developer/mini-cluster/)
-- [Test Automation Developer](test-automation-developer/)
-    - [User API Automation](test-automation-developer/user-api-automation/)
-- [XR Developer](xr-developer/)
-    - [Content Visualizer](xr-developer/content-visualizer/)
-- [Mobile Developer](mobile-developer/)
-    - [Rocket App](mobile-developer/rocket-app/)
+### Prerequisites
 
-## Case Study Markdown Template Style Guide
+- .NET Core SDK (version 7.0 or higher) installed
+- Postman (or any other HTTP client) installed
 
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/employee-api.git
+
+
+### Configuration
+
+IdentityServer:Authority: https://localhost:5001
+
+IdentityServer:ClientId: client
+
+IdentityServer:ClientSecret: secret
+
+### Usage
+
+1. Start IdenditityServer and EmployeeApi
+2. Obtain a bearer token:
+   
+To access the API endpoints, you need a bearer token. Use the following cURL command or any other HTTP client to request a token:
+
+  ```bash
+  curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=client_credentials&client_id <client_id>&client_secret=<client_secret>&scope= <api_scope>" https://localhost:5001/connect/token
+```   
+
+3. API Endpoints:
+
+- POST /api/employee - Create a new employee. Requires authentication.
+- GET /api/employee - Get a list of all employees. Requires authentication.
+- GET /api/employee/{id} - Get an employee by ID. Requires authentication.
+- PUT /api/employee/{id} - Update an employee by ID. Requires authentication.
+- DELETE /api/employee/{id} - Delete an employee by ID. Requires authentication.
+
+For each endpoint, include the bearer token obtained in the Authorization header as follows:
+```bash
+Authorization: Bearer <bearer_token>
 ```
-![RoofStacks Logo](../../roofstacks-logo.png)
 
-# {{Case Name}}
+Replace `<bearer_token>` with the actual bearer token value.
 
-## Table of Contents
-- [Summary](#summary)
-- [Details](#details)
-- [Solution](#solution)
+4. Testing with Postman:
+   
+You can import the provided Postman collection (employee-api.postman_collection.json) into Postman. The collection contains pre-configured requests for each API endpoint. Make sure to update the environment variables with your own values before executing the requests.
 
-## Summary
-{{Short summary of your case}}
+### Validation
+   
+Input validation is performed using FluentValidation. The API ensures that the employee data sent in the requests is valid according to the defined rules.
 
-## Details
-- {{a detail or mockup of your requirements on the case study}}.
-- {{a detail or mockup of your requirements on the case study}}.
-- {{a detail or mockup of your requirements on the case study}}.
+###  Object Mapping
 
-## Solution
-Design a system that contains all rules in the details and please make a readme file to explain your solution. You could also draw diagrams and flow charts. You could use any software language, platform, tool, library, or framework except those specified as required in the details section. Please push your solution to GitHub and share the related URL with us.
-```
+The API uses Mapster for object mapping. It simplifies the mapping process between different object types, allowing for efficient conversion of employee data between the API models and the in-memory database entities.
 
-## Authors
-- [Ugur sirmen](https://github.com/ugursirmen)
-- [Mehmet Dağdelen](https://github.com/mdagdelen)
+
+
+
