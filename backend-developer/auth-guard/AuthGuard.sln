@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E5B9646-EA13-426B-B0B0-6F0A1D9B539A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{45388F1F-9B61-4FD4-8273-51684150BE7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeApi", "src\EmployeeApi\EmployeeApi.csproj", "{FAF78AE0-D24A-4111-B230-A4C622C5374E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45388F1F-9B61-4FD4-8273-51684150BE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45388F1F-9B61-4FD4-8273-51684150BE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45388F1F-9B61-4FD4-8273-51684150BE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45388F1F-9B61-4FD4-8273-51684150BE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF78AE0-D24A-4111-B230-A4C622C5374E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF78AE0-D24A-4111-B230-A4C622C5374E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF78AE0-D24A-4111-B230-A4C622C5374E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF78AE0-D24A-4111-B230-A4C622C5374E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45388F1F-9B61-4FD4-8273-51684150BE7E} = {5E5B9646-EA13-426B-B0B0-6F0A1D9B539A}
+		{FAF78AE0-D24A-4111-B230-A4C622C5374E} = {5E5B9646-EA13-426B-B0B0-6F0A1D9B539A}
+	EndGlobalSection
+EndGlobal

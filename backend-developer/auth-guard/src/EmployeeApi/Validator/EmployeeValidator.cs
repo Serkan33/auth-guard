@@ -40,13 +40,13 @@ namespace EmployeeApi.Validator
 
         private  bool IsUniqueEmail(string email)
         {
-            Employee employee = _dbContext.Employees.FirstOrDefault(e => e.Email.Equals(email));
+            var employee = _dbContext.Employees.FirstOrDefault(e => e.Email.Equals(email));
             return employee==null;
         }
 
         private bool IsUniquePhone(string phone)
         {
-            Employee employee = _dbContext.Employees.FirstOrDefault(e => e.Phone.Equals(phone));
+            var employee = _dbContext.Employees.FirstOrDefault(e => e.Phone.Equals(phone));
             return employee == null;
         }
         private bool ValidateUsingEmailAddressAttribute(string emailAddress)
